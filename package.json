@@ -1,5 +1,5 @@
 {
-  "name": "react-one-tap-login",
+  "name": "react-google-one-tap-login",
   "version": "0.0.4",
   "description": "React wrapper for google one tap authentication",
   "keywords": [
@@ -39,6 +39,7 @@
     "yarn": ">=1.16.0"
   },
   "scripts": {
+    "npm-publish": "yarn build && npm publish",
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "lint:staged": "lint-staged",
     "prebuild": "rimraf dist",
