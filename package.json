@@ -3,14 +3,16 @@
   "version": "0.0.3",
   "description": "React wrapper for google one tap login",
   "keywords": [
-    "react",
-    "google",
-    "wrapper",
-    "one tap login",
     "one",
     "tap",
+    "react",
     "login",
-    "hooks"
+    "hooks",
+    "google",
+    "wrapper",
+    "reactjs",
+    "one tap login",
+    "react-google-one-tap-login"
   ],
   "main": "dist/index.umd.js",
   "module": "dist/index.es5.js",
