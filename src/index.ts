@@ -1,12 +1,12 @@
 import { memo } from 'react';
-import { IGoogleOneTapLogin } from './types';
-import { useGoogleOneTapLogin } from './useGoogleIneTapLogin';
+import { IGoogleOneTap } from './types';
+import { useGoogleOneTap } from './useGoogleOneTap';
 
-function GoogleOneTapLogin({ children, ...props }: IGoogleOneTapLogin) {
-  useGoogleOneTapLogin(props);
+function GoogleOneTap({ children, ...props }: IGoogleOneTap) {
+  useGoogleOneTap(props);
   return children;
 }
 
-export default memo(GoogleOneTapLogin);
+export default memo(GoogleOneTap);
 
-export { useGoogleOneTapLogin };
+export { useGoogleOneTap };

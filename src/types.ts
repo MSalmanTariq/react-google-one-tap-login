@@ -7,18 +7,18 @@ declare global {
   }
 }
 
-export interface IGoogleOneTapLogin extends IUseGoogleOneTapLogin {
+export interface IGoogleOneTap extends IUseGoogleOneTap {
   children: ReactElement;
 }
 
-export interface IUseGoogleOneTapLogin {
+export interface IUseGoogleOneTap {
   disabled?: boolean;
   onError: (error?: Error | string) => void;
-  googleAccountConfigs: IGoogleOneTapLoginProps;
+  googleAccountConfigs: IGoogleOneTapProps;
   onSuccess: (response: IGoogleEndPointResponse) => void;
 }
 
-export interface IGoogleOneTapLoginProps {
+export interface IGoogleOneTapProps {
   nonce?: boolean;
   context?: string;
   client_id: string;

@@ -1,7 +1,7 @@
 {
-  "name": "react-google-one-tap-login",
+  "name": "react-google-one-tap",
   "version": "0.0.4",
-  "description": "React wrapper for google one tap login",
+  "description": "React wrapper for google one tap authentication",
   "keywords": [
     "one",
     "tap",
@@ -9,10 +9,12 @@
     "login",
     "hooks",
     "google",
+    "google",
     "wrapper",
     "reactjs",
     "one tap login",
-    "react-google-one-tap-login"
+    "authentication",
+    "react-google-one-tap"
   ],
   "main": "dist/index.umd.js",
   "module": "dist/index.es5.js",
@@ -26,9 +28,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MSalmanTariq/react-google-one-tap-login.git"
+    "url": "git+https://github.com/MSalmanTariq/react-google-one-tap.git"
   },
-  "homepage": "https://github.com/MSalmanTariq/react-google-one-tap-login",
+  "homepage": "https://github.com/MSalmanTariq/react-google-one-tap",
   "license": "MIT",
   "engines": {
     "npm": ">=5.5.1",

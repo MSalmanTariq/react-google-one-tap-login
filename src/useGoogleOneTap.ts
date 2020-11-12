@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import {
-  IUseGoogleOneTapLogin,
+  IUseGoogleOneTap,
   IGoogleCallbackResponse,
   IGoogleEndPointResponse,
 } from './types';
 import useScript from './useScript';
 
-const scriptFlag: string = '__googleOneTapLoginScript__';
+const scriptFlag: string = '__googleOneTapScript__';
 const googleClientScriptURL: string = 'https://accounts.google.com/gsi/client';
 const oauthEndpointURL: string =
   'https://oauth2.googleapis.com/tokeninfo?id_token=';
@@ -17,8 +17,8 @@ function callback({
   onSuccess,
 }: {
   data: IGoogleCallbackResponse;
-  onError: IUseGoogleOneTapLogin['onError'];
-  onSuccess: IUseGoogleOneTapLogin['onSuccess'];
+  onError: IUseGoogleOneTap['onError'];
+  onSuccess: IUseGoogleOneTap['onSuccess'];
 }) {
   if (data?.credential) {
     fetch(`${oauthEndpointURL}${data.credential}`)
@@ -40,12 +40,12 @@ function callback({
   }
 }
 
-export function useGoogleOneTapLogin({
+export function useGoogleOneTap({
   onError,
   disabled,
   onSuccess,
   googleAccountConfigs,
-}: IUseGoogleOneTapLogin) {
+}: IUseGoogleOneTap) {
   const loaded: boolean = window?.[scriptFlag];
   const script = useScript(googleClientScriptURL);
 
