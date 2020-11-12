@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import {
-  IUseGoogleOneTap,
+  IUseGoogleOneTapLogin,
   IGoogleCallbackResponse,
   IGoogleEndPointResponse,
 } from './types';
@@ -17,8 +17,8 @@ function callback({
   onSuccess,
 }: {
   data: IGoogleCallbackResponse;
-  onError: IUseGoogleOneTap['onError'];
-  onSuccess: IUseGoogleOneTap['onSuccess'];
+  onError: IUseGoogleOneTapLogin['onError'];
+  onSuccess: IUseGoogleOneTapLogin['onSuccess'];
 }) {
   if (data?.credential) {
     fetch(`${oauthEndpointURL}${data.credential}`)
@@ -40,12 +40,12 @@ function callback({
   }
 }
 
-export function useGoogleOneTap({
+export function useGoogleOneTapLogin({
   onError,
   disabled,
   onSuccess,
   googleAccountConfigs,
-}: IUseGoogleOneTap) {
+}: IUseGoogleOneTapLogin) {
   const loaded: boolean = window?.[scriptFlag];
   const script = useScript(googleClientScriptURL);
 

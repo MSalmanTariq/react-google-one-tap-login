@@ -8,7 +8,6 @@ import typescript from 'rollup-plugin-typescript2';
 
 const pkg = require('./package.json');
 
-// const libraryName = 'fs-frontend-commons'
 const libraryName = 'index';
 
 export default {
