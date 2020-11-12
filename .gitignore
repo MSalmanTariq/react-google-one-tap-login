@@ -10,6 +10,5 @@ compiled
 .rpt2_cache
 yarn.lock
 docs
-fs-frontend-commons.js
-fs-frontend-commons.js.map
+dist
 Helpers
