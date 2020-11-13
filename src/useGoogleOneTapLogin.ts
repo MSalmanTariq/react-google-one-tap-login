@@ -46,11 +46,10 @@ export function useGoogleOneTapLogin({
   onSuccess,
   googleAccountConfigs,
 }: IUseGoogleOneTapLogin) {
-  const loaded: boolean = window?.[scriptFlag];
   const script = useScript(googleClientScriptURL);
 
   useEffect(() => {
-    if (!loaded && script === 'ready') {
+    if (!window?.[scriptFlag] && script === 'ready') {
       window.google.accounts.id.initialize({
         ...googleAccountConfigs,
         callback: (data: IGoogleCallbackResponse) =>
@@ -58,10 +57,10 @@ export function useGoogleOneTapLogin({
       });
       window[scriptFlag] = true;
     }
-    if (loaded && script === 'ready' && !disabled) {
+    if (window?.[scriptFlag] && script === 'ready' && !disabled) {
       window.google.accounts.id.prompt();
     }
-  }, [script, loaded, disabled]);
+  }, [script, window?.[scriptFlag], disabled]);
 
   return null;
 }
