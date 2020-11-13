@@ -2,6 +2,7 @@ import * as react from 'react';
 import json from 'rollup-plugin-json';
 import camelCase from 'lodash.camelcase';
 import commonjs from 'rollup-plugin-commonjs';
+import external from 'rollup-plugin-peer-deps-external';
 import resolve from 'rollup-plugin-node-resolve';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import typescript from 'rollup-plugin-typescript2';
@@ -22,7 +23,7 @@ export default {
     { file: pkg.module, format: 'es', sourcemap: true },
   ],
   // Indicate here external modules you don't wanna include in your bundle (i.e.: 'react')
-  external: ['react', 'react-dom'],
+
   watch: {
     include: 'src/**',
   },
@@ -44,5 +45,8 @@ export default {
 
     // Resolve source maps to the original source
     sourceMaps(),
+    external({
+      includeDependencies: true,
+    }),
   ],
 };
