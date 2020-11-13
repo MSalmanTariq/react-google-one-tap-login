@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { IGoogleOneTapLogin } from './types';
-import { useGoogleOneTapLogin } from './useGoogleOneTap';
+import { useGoogleOneTapLogin } from './useGoogleOneTapLogin';
 
 function GoogleOneTapLogin({ children, ...props }: IGoogleOneTapLogin) {
   useGoogleOneTapLogin(props);
