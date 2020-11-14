@@ -1,6 +1,6 @@
 {
   "name": "react-google-one-tap-login",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "React wrapper for google one tap authentication",
   "keywords": [
     "one",
