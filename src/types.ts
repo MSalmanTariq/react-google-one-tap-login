@@ -13,21 +13,21 @@ export interface IGoogleOneTapLogin extends IUseGoogleOneTapLogin {
 
 export interface IUseGoogleOneTapLogin {
   disabled?: boolean;
-  onError: (error?: Error | string) => void;
+  onError?: (error?: Error | string) => void;
   googleAccountConfigs: IGoogleOneTapLoginProps;
-  onSuccess: (response: IGoogleEndPointResponse) => void;
+  onSuccess?: (response: IGoogleEndPointResponse) => void;
 }
 
 export interface IGoogleOneTapLoginProps {
-  nonce?: boolean;
+  nonce?: string;
   context?: string;
   client_id: string;
-  callback?: boolean;
   auto_select?: boolean;
-  native_callback?: boolean;
-  prompt_parent_id?: boolean;
+  prompt_parent_id?: string;
   state_cookie_domain?: string;
   cancel_on_tap_outside?: boolean;
+  callback?: (...args: any) => any;
+  native_callback?: (...args: any) => any;
 }
 
 export interface IGoogleCallbackResponse {

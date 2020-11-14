@@ -17,8 +17,8 @@ function callback({
   onSuccess,
 }: {
   data: IGoogleCallbackResponse;
-  onError: IUseGoogleOneTapLogin['onError'];
-  onSuccess: IUseGoogleOneTapLogin['onSuccess'];
+  onError?: IUseGoogleOneTapLogin['onError'];
+  onSuccess?: IUseGoogleOneTapLogin['onSuccess'];
 }) {
   if (data?.credential) {
     fetch(`${oauthEndpointURL}${data.credential}`)
@@ -26,15 +26,15 @@ function callback({
         if (resp?.status === 200 && resp?.json) {
           return resp.json();
         } else {
-          onError();
+          onError ? onError() : null;
           throw new Error('Something went wrong');
         }
       })
       .then((resp: IGoogleEndPointResponse) => {
-        onSuccess(resp);
+        onSuccess ? onSuccess(resp) : null;
       })
       .catch((error) => {
-        onError(error);
+        onError ? onError(error) : null;
         throw error;
       });
   }
