@@ -49,7 +49,7 @@ export function useGoogleOneTapLogin({
   const script = useScript(googleClientScriptURL);
 
   useEffect(() => {
-    if (!window?.[scriptFlag] && script === 'ready') {
+    if (!window?.[scriptFlag] && window.google && script === 'ready') {
       window.google.accounts.id.initialize({
         ...googleAccountConfigs,
         callback: (data: IGoogleCallbackResponse) =>
