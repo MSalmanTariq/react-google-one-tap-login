@@ -26,15 +26,21 @@ function callback({
         if (resp?.status === 200 && resp?.json) {
           return resp.json();
         } else {
-          onError ? onError() : null;
+          if (onError) {
+            onError();
+          }
           throw new Error('Something went wrong');
         }
       })
       .then((resp: IGoogleEndPointResponse) => {
-        onSuccess ? onSuccess(resp) : null;
+        if (onSuccess) {
+          onSuccess(resp);
+        }
       })
       .catch((error) => {
-        onError ? onError(error) : null;
+        if (onError) {
+          onError(error);
+        }
         throw error;
       });
   }

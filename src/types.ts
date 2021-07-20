@@ -8,7 +8,7 @@ declare global {
 }
 
 export interface IGoogleOneTapLogin extends IUseGoogleOneTapLogin {
-  children: ReactElement;
+  children?: ReactElement | null;
 }
 
 export interface IUseGoogleOneTapLogin {
