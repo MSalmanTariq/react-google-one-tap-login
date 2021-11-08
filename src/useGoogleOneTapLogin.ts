@@ -53,13 +53,17 @@ export function useGoogleOneTapLogin({
   googleAccountConfigs,
 }: IUseGoogleOneTapLogin) {
   const script = useScript(googleClientScriptURL);
+  // Use the user's custom callback if they specified one; otherwise use the default one defined above:
+  const callbackToUse = googleAccountConfigs.callback
+      ? googleAccountConfigs.callback
+      : (data: IGoogleCallbackResponse) =>
+          callback({ data, onError, onSuccess });
 
   useEffect(() => {
     if (!window?.[scriptFlag] && window.google && script === 'ready') {
       window.google.accounts.id.initialize({
         ...googleAccountConfigs,
-        callback: (data: IGoogleCallbackResponse) =>
-          callback({ data, onError, onSuccess }),
+        callback: callbackToUse,
       });
       window[scriptFlag] = true;
     }
