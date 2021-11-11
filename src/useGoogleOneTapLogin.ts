@@ -69,6 +69,10 @@ export function useGoogleOneTapLogin({
     }
     if (window?.[scriptFlag] && script === 'ready' && !disabled) {
       window.google.accounts.id.prompt();
+
+      return () => {
+        window.google.accounts.id.cancel();
+      }
     }
   }, [script, window?.[scriptFlag], disabled]);
 
