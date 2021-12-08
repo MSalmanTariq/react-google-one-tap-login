@@ -51,13 +51,13 @@ export function useGoogleOneTapLogin({
   disabled,
   onSuccess,
   googleAccountConfigs,
+  disableCancelOnUnmount = false,
 }: IUseGoogleOneTapLogin) {
   const script = useScript(googleClientScriptURL);
   // Use the user's custom callback if they specified one; otherwise use the default one defined above:
   const callbackToUse = googleAccountConfigs.callback
-      ? googleAccountConfigs.callback
-      : (data: IGoogleCallbackResponse) =>
-          callback({ data, onError, onSuccess });
+    ? googleAccountConfigs.callback
+    : (data: IGoogleCallbackResponse) => callback({ data, onError, onSuccess });
 
   useEffect(() => {
     if (!window?.[scriptFlag] && window.google && script === 'ready') {
@@ -71,8 +71,10 @@ export function useGoogleOneTapLogin({
       window.google.accounts.id.prompt();
 
       return () => {
-        window.google.accounts.id.cancel();
-      }
+        if (!disableCancelOnUnmount) {
+          window.google.accounts.id.cancel();
+        }
+      };
     }
   }, [script, window?.[scriptFlag], disabled]);
 

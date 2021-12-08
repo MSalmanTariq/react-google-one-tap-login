@@ -13,6 +13,7 @@ export interface IGoogleOneTapLogin extends IUseGoogleOneTapLogin {
 
 export interface IUseGoogleOneTapLogin {
   disabled?: boolean;
+  disableCancelOnUnmount?: boolean;
   onError?: (error?: Error | string) => void;
   googleAccountConfigs: IGoogleOneTapLoginProps;
   onSuccess?: (response: IGoogleEndPointResponse) => void;
