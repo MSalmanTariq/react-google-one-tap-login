@@ -1,6 +1,6 @@
 {
   "name": "react-google-one-tap-login",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "React wrapper for google one tap authentication",
   "keywords": [
     "one",
@@ -29,9 +29,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MSalmanTariq/react-google-one-tap-login.git"
+    "url": "git+https://github.com/jjdelorme/react-google-one-tap-login.git"
   },
-  "homepage": "https://github.com/MSalmanTariq/react-google-one-tap-login",
+  "homepage": "https://github.com/jjdelorme/react-google-one-tap-login",
   "license": "MIT",
   "engines": {
     "npm": ">=5.5.1",
@@ -52,7 +52,9 @@
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "semantic-release": "semantic-release",
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once",
+    "prepush": "npm run test:prod && npm run build",
+    "commitmsg": "commitlint -E HUSKY_GIT_PARAMS"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [

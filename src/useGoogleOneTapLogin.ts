@@ -21,7 +21,9 @@ function callback({
   onSuccess?: IUseGoogleOneTapLogin['onSuccess'];
 }) {
   if (data?.credential) {
-    fetch(`${oauthEndpointURL}${data.credential}`)
+    const id_token = data.credential;
+    console.log("got id_token: " + id_token);
+    fetch(`${oauthEndpointURL}${id_token}`)
       .then((resp) => {
         if (resp?.status === 200 && resp?.json) {
           return resp.json();
@@ -34,6 +36,7 @@ function callback({
       })
       .then((resp: IGoogleEndPointResponse) => {
         if (onSuccess) {
+          resp.id_token = id_token;
           onSuccess(resp);
         }
       })
