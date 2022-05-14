@@ -52,9 +52,7 @@
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "semantic-release": "semantic-release",
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
-    "travis-deploy-once": "travis-deploy-once",
-    "prepush": "npm run test:prod && npm run build",
-    "commitmsg": "commitlint -E HUSKY_GIT_PARAMS"
+    "travis-deploy-once": "travis-deploy-once"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
