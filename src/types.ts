@@ -49,4 +49,5 @@ export interface IGoogleEndPointResponse {
   given_name: string;
   family_name: string;
   email_verified: string;
+  id_token?: string;
 }
