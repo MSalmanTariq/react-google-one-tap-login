@@ -38,7 +38,7 @@ import ReactDOM from 'react-dom';
 import GoogleOneTapLogin from 'react-google-one-tap-login';
 
 ReactDOM.render(
-  <GoogleOneTapLogin onError={(error) => console.log(error} onSuccess={(response) => console.log(response} googleAccountConfigs={{ client_id: // Your google client id here !!! }} />,
+  <GoogleOneTapLogin onError={(error) => console.log(error)} onSuccess={(response) => console.log(response)} googleAccountConfigs={{ client_id: // Your google client id here !!! }} />,
   document.getElementById('root')
 );
 ```
