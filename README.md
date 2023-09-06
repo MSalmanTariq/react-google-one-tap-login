@@ -1,14 +1,16 @@
 # React - Google One Tap Login
 
-React wrapper for google one tap authentication
+React wrapper for Google one tap authentication.
 
 ## Install
+
+Using npm:
 
 ```
 npm install react-google-one-tap-login
 ```
 
-OR
+Or using yarn:
 
 ```
 yarn add react-google-one-tap-login
@@ -16,7 +18,7 @@ yarn add react-google-one-tap-login
 
 ## How to use
 
-## As a Hook
+### As a Hook
 
 ```js
 import { useGoogleOneTapLogin } from 'react-google-one-tap-login';
@@ -30,7 +32,7 @@ useGoogleOneTapLogin({
   });
 ```
 
-## As a Component
+### As a Component
 
 ```js
 import React from 'react';
@@ -38,10 +40,18 @@ import ReactDOM from 'react-dom';
 import GoogleOneTapLogin from 'react-google-one-tap-login';
 
 ReactDOM.render(
-  <GoogleOneTapLogin onError={(error) => console.log(error} onSuccess={(response) => console.log(response} googleAccountConfigs={{ client_id: // Your google client id here !!! }} />,
+  <GoogleOneTapLogin 
+      onError={(error) => console.log(error)}
+      onSuccess={(response) => console.log(response)}
+      googleAccountConfigs={{ client_id: // Your google client id here !!! }} 
+  />,
   document.getElementById('root')
 );
 ```
+
+## Example: Next.js 13 (App Router)
+
+This example covers a scenario on how to handle login process with cookies in a Next.js 13 app. Detailed information and example codes can be found in the [nextjs13 directory](/nextjs13/) or you can [read more in the dedicated README](/nextjs13/README.md).
 
 ## Props
 
