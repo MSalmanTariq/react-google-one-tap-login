@@ -43,6 +43,9 @@ ReactDOM.render(
 );
 ```
 
+## On Next.js 13 (App Route)
+(Read more)[/nextjs13/README.md] and see example codes like how to handle login cookies.
+
 ## Props
 
 | Name                   | Type     | Required |                                                         Description                                                          |
